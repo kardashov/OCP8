@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Mon May 22 18:13:09 EEST 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (???): instance a816c00e-015c-30b8-1652-00000e35bb00 
+on database directory /home/st/workspace/ExamPreparation/zoo with class loader sun.misc.Launcher$AppClassLoader@75b84c92 
+Loaded from file:/usr/share/java/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_131-8u131-b11-0ubuntu1.17.04.1-b11
+user.dir=/home/st/workspace/ExamPreparation
+os.name=Linux
+os.arch=amd64
+os.version=4.10.0-21-generic
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

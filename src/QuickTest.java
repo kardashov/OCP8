@@ -5,6 +5,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import java.util.stream.IntStream;
 
 
 public class QuickTest {
@@ -23,7 +24,6 @@ public class QuickTest {
      
 //     Collections.sort(list); // throws Runtime exceptions if nulls present in collections
 //     System.out.println(list);
-     FileWriter
 //     Predicate<Integer>  d = (Integer i)-> i%2==0;
 //     Predicate even = d;
 //     even.test("sdf");
@@ -41,6 +41,9 @@ public class QuickTest {
 		System.out.println(Collectors.joining("_").characteristics());	
 		System.out.println(Collectors.joining().characteristics());	
 			
+		int[] ccc = {3,4};
+		IntStream cc = IntStream.of(ccc);
+		cc.forEach(System.out::println);
 	}
 	
 }

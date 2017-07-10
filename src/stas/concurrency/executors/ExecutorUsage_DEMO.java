@@ -5,7 +5,14 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 public class ExecutorUsage_DEMO {
-
+/* http://docs.oracle.com/javase/tutorial/essential/concurrency/exinter.html
+	 	
+	 	Executor, a simple interface that supports launching new tasks.
+		ExecutorService, a subinterface of Executor, which adds features that help
+	manage the life cycle, both of the individual tasks and of the executor itself.
+		ScheduledExecutorService, a subinterface of ExecutorService, supports future 
+	and/or periodic execution of tasks.*/
+	
 	private static ExecutorService executor = null;
 	private static volatile Future taskOneResults = null;
 	private static volatile Future taskTwoResults = null;

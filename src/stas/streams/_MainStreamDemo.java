@@ -192,6 +192,16 @@ public class _MainStreamDemo {
 		Set<String> set1 = stream.collect(Collectors.toSet());
 		System.out.println(set1); // [f, w, l, o]
 		
+		System.out.println("================== toARRAY() ======================================");
+		stream = Stream.of("w", "o", "l", "f");
+		Object[] objarr = stream.toArray();
+		System.out.println(Arrays.toString(objarr));// [w, o, l, f]
+		
+		stream = Stream.of("w", "o", "l", "f");
+		String[] str = stream.toArray(x -> new String[x]);
+		System.out.println(Arrays.toString(str));   // [w, o, l, f]
+		
+		
 		System.out.println("===================Stream INTERMIDIATE OPERATIONS==================");
 		
 		System.out.println("===================FILTER()========================================");

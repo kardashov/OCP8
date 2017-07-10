@@ -3,7 +3,7 @@ package stas.comparators;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class UseTreeSet {
+public class TreeSetComparable_DEMO {
 	static class Rabbit {
 		int id;
 	}

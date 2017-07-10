@@ -10,6 +10,11 @@ class ComplicatedTask extends RecursiveTask<Integer> {
 	int from;
 	int to;
 	static AtomicInteger invoke_count = new AtomicInteger();;
+/*	if (my portion of the work is small enough)
+		  do the work directly
+		else
+		  split my work into two pieces
+		  invoke the two pieces and wait for the results*/
 	
 	static final int THRESHOLD = 50;
 
@@ -33,6 +38,7 @@ class ComplicatedTask extends RecursiveTask<Integer> {
 			ComplicatedTask newtask1 = new ComplicatedTask(ia, from, mid);
 			ComplicatedTask newtask2 = new ComplicatedTask(ia, mid + 1, to);
 			newtask2.fork();
+			
 			sum = newtask1.compute();
 			sum += newtask2.join();
 			

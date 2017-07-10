@@ -51,12 +51,13 @@ public class ssdfs {
 		
 	static void m1(Enumer f) {
 		if (f instanceof Enum<?>) {
-			Enum<?> c = (Enum<?>) f;
-			System.out.println(c);
-			switch(c.){
-			
-			}
-			
+		//	Enum<?> c = (Enum<?>) f;
+		//	System.out.println(c);
+			if (f == FF.VAL1)
+				System.out.println("VAL1 is here");
+			else
+				return;
+
 			}
 		}
 			

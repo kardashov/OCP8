@@ -4,7 +4,9 @@ import java.util.Arrays;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveTask;
 import java.util.concurrent.atomic.AtomicInteger;
+//http://tutorials.jenkov.com/java-util-concurrent/java-fork-and-join-forkjoinpool.html
 
+//http://coopsoft.com/ar/CalamityArticle.html#inefficient
 class ComplicatedTask extends RecursiveTask<Integer> {
 	int[] ia;
 	int from;

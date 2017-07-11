@@ -11,7 +11,6 @@ public class _Lock_DEMO {
 	public static void main(String[] args) {
 
 		ReentrantReadWriteLock f;
-		java.util.concurrent.locks.
 	}
 
 }

@@ -5,8 +5,10 @@ import java.io.File;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveAction;
 import javax.imageio.ImageIO;
+//http://tutorials.jenkov.com/java-util-concurrent/java-fork-and-join-forkjoinpool.html
 
-/**
+//http://coopsoft.com/ar/CalamityArticle.html#inefficient
+/*
  * ForkBlur implements a simple horizontal image blur. It averages pixels in the
  * source array and writes them to a destination array. The sThreshold value
  * determines whether the blurring will be performed directly or split into two

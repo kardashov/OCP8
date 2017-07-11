@@ -323,16 +323,14 @@ public class _NIO2_DEMO {
 			e.printStackTrace();
 		}
 		
-		System.out.println("=======  readAllLines() Reading Files =========");
+		System.out.println("=======  Files.readAllLines(path) Reading Files =========");
 		path = Paths.get("/home/st/zoo.txt");
 		try {
-			final List<String> lines = Files.readAllLines(path);
+			List<String> lines = Files.readAllLines(path);
 			for (String line : lines) {
 				System.out.println(line);
 			}
 		} catch (IOException e) {e.printStackTrace();}
-		
-		
 		
 		
 		

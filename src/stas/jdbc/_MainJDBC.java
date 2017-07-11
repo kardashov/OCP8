@@ -10,7 +10,7 @@ public class _MainJDBC {
 //	private static final String url = "jdbc:derby:zoo;create=true";
 	public static void main(String[] args) throws SQLException {
 
-		
+//http://docs.oracle.com/javase/tutorial/jdbc/basics/processingsqlstatements.html		
 		
 		try (Connection conn = DriverManager.getConnection(url, USERNAME, PASSWORD); 
 				Statement stmt = conn.createStatement()) {

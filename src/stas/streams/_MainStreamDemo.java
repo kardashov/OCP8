@@ -2,7 +2,6 @@ package stas.streams;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
@@ -18,7 +17,9 @@ import java.util.*;
 public class _MainStreamDemo {
 
 	public static void main(String[] args) {
-
+//		http://winterbe.com/posts/2014/07/31/java8-stream-tutorial-examples/
+		
+//		https://en.wikipedia.org/wiki/Monad_%28functional_programming%29
 		Stream<String> empty = Stream.empty();// count = 0
 		Stream<Integer> singleElement = Stream.of(1);// count = 1
 		Stream<Integer> fromArray = Stream.of(1, 2, 3);// count = 2

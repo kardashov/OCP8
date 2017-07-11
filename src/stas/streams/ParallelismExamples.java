@@ -43,14 +43,14 @@ public class ParallelismExamples {
 		roster.stream().forEach(p -> p.printPerson());
 		System.out.println();
 
-		// 1. Average age of male members in parallel
+// 1. Average age of male members in parallel ==============================================
 
 		double average = roster.parallelStream().filter(p -> p.getGender() == Person.Sex.MALE).mapToInt(Person::getAge)
 				.average().getAsDouble();
 
 		System.out.println("Average age of male members in parallel: " + average);
 
-		// 2. Concurrent reduction example
+// 2. Concurrent reduction example =========================================================
 
 		ConcurrentMap<Person.Sex, List<Person>> byGenderParallel = roster.parallelStream()
 				.collect(Collectors.groupingByConcurrent(Person::getGender));
@@ -63,7 +63,7 @@ public class ParallelismExamples {
 			e.getValue().stream().map(Person::getName).forEach(f -> System.out.println(f));
 		});
 
-		// 3. Examples of ordering and parallelism
+// 3. Examples of ordering and parallelism ====================================================
 
 		System.out.println("Examples of ordering and parallelism:");
 		Integer[] intArray = { 1, 2, 3, 4, 5, 6, 7, 8 };
@@ -92,7 +92,7 @@ public class ParallelismExamples {
 		listOfIntegers.parallelStream().forEachOrdered(e -> System.out.print(e + " "));
 		System.out.println("");
 
-		// 4. Example of interference
+// 4. Example of interference ========================================================
 
 		try {
 			List<String> listOfStrings = new ArrayList<>(Arrays.asList("one", "two"));
@@ -137,7 +137,7 @@ public class ParallelismExamples {
 		List<Integer> parallelStorage = Collections.synchronizedList(new ArrayList<>());
 		listOfIntegers.parallelStream()
 
-				// Don't do this! It uses a stateful lambda expression.
+		// Don't do this! It uses a stateful lambda expression.
 				.map(e -> {
 					parallelStorage.add(e);
 					return e;

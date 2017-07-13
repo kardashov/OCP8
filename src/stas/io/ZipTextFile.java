@@ -1,4 +1,4 @@
-package stas.misc;
+package stas.io;
 
 import java.util.*;
 import java.util.zip.*;

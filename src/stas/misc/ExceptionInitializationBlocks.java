@@ -8,23 +8,21 @@ public class ExceptionInitializationBlocks {
 	public int a;
 	public int b;
 	public static void main(String[] args) {
-		
 	}
 	
+	{}
+	
 	public void method1() throws IOException {
-		
 		
 	}
 	
 	public ExceptionInitializationBlocks() throws IOException, SQLDataException {
-		// TODO Auto-generated constructor stub
 		this.a = 0;
 
 	}
 
 	public ExceptionInitializationBlocks(int c) throws IOException,
 			SQLDataException {
-		// TODO Auto-generated constructor stub
 		this.a = c;
 	}
 

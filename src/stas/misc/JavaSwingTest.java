@@ -12,12 +12,8 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import javax.swing.*;
 
-//import java.awt.events.*;
 
 public class JavaSwingTest extends JFrame {
-	/**
-	 * 
-	 */
 
 	JButton button1;
 	JTextField textField1;
@@ -25,7 +21,6 @@ public class JavaSwingTest extends JFrame {
 	int buttonClicked;
 
 	public JavaSwingTest() {
-		// TODO Auto-generated constructor stub
 
 		this.setSize(400, 400);
 		Toolkit tk = Toolkit.getDefaultToolkit();

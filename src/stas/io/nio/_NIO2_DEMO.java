@@ -18,6 +18,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.nio.file.attribute.FileTime;
+import java.nio.file.attribute.UserPrincipal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -207,7 +209,7 @@ public class _NIO2_DEMO {
 		file = path.toFile(); // convert Path back to File
 		
 		System.out.println("==========================================================================");
-		System.out.println("================ Files CLASS usage =======================================");
+		System.out.println("================ FILES class usage =======================================");
 		System.out.println("==========================================================================");
 		
 		System.out.println("================  exists() Testing a Path ================================");
@@ -235,8 +237,9 @@ public class _NIO2_DEMO {
 		
 		try {
 			Files.createDirectory(Paths.get("/bison/field"));
-//			The first example creates a new directory, field , in the directory /bison, assuming
+//			creates a new directory, field, in the directory /bison, assuming
 //			/bison exists; or else an exception is thrown.
+			
 			Files.createDirectories(Paths.get("/bison/field/pasture/green"));
 //			creates the directory green along 
 //			with any of the following parent directories if they do not	already exist
@@ -333,10 +336,28 @@ public class _NIO2_DEMO {
 		} catch (IOException e) {e.printStackTrace();}
 		
 		
+		System.out.println("=======  Files.getLastModifiedTime() =========");
+		try {
+			path = Paths.get("/rabbit/food.jpg");
+			System.out.println(Files.getLastModifiedTime(path).toMillis());
+			Files.setLastModifiedTime(path, FileTime.fromMillis(System.currentTimeMillis()));
+			System.out.println(Files.getLastModifiedTime(path).toMillis());
+		} catch (IOException e) {};
 		
-		
-		
-		
+		System.out.println("=======  Files.getOwner() and Files.setOwner() =========");
+			
+		try {
+			// Read owner of file
+			path = Paths.get("/home/st/feathers.txt");
+			System.out.println(Files.getOwner(path).getName());
+			
+			// Change owner of file
+			UserPrincipal owner = path.getFileSystem().getUserPrincipalLookupService().lookupPrincipalByName("st");
+			Files.setOwner(path, owner);
+			
+			// Output the updated owner information
+			System.out.println(Files.getOwner(path).getName());
+		} catch (IOException e) {e.printStackTrace();}
 		
 	}
 

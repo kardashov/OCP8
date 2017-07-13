@@ -17,5 +17,14 @@ public class NavigableMap_DEMO {
 		System.out.println("The data descending order is: " + examScores.descendingKeySet());
 		System.out.println("Details of those who passed the exam: " + examScores.tailMap(40));
 		System.out.println("The lowest mark is: " + examScores.firstEntry());
+		
+		
+		examScores.tailMap(40).clear(); //{10=Emma, 20=Isabella}  Olivia and Sophia removed
+		System.out.println(examScores);
+		
+		
+		examScores.descendingKeySet().clear(); //cleans all map
+		System.out.println(examScores);   // {} 
+		
 	}
 }

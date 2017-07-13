@@ -40,7 +40,6 @@ public class QuickTest {
 		System.out.println(Collectors.groupingByConcurrent(a -> a).characteristics());
 		System.out.println(Collectors.joining("_").characteristics());	
 		System.out.println(Collectors.joining().characteristics());	
-			
 		int[] ccc = {3,4};
 		IntStream cc = IntStream.of(ccc);
 		cc.forEach(System.out::println);

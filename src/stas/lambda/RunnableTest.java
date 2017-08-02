@@ -5,7 +5,7 @@ public class RunnableTest {
 	public static void main(String[] args) {
     
     System.out.println("=== RunnableTest ===");
-     
+//    https://www.youtube.com/watch?v=x9ovGHK7r2E   this reference in lambda expressions
      // Anonymous Runnable
      Runnable r1 = new Runnable(){
        

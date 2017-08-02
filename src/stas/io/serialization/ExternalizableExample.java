@@ -15,7 +15,7 @@ class ExternalizablePair implements Externalizable {
 	private int myInt = 33;
 	private Animal animal = new Animal("Tiger",23,'c');
 
-	public ExternalizablePair() {
+	public ExternalizablePair(int s) {
 		this.key = null;
 		this.value = null;
 	}
@@ -68,7 +68,7 @@ public class ExternalizableExample {
 		outputStream.close();
 
 		// Read the contents from the file and create a new instance.
-		ExternalizablePair copyOfPair = new ExternalizablePair();
+		ExternalizablePair copyOfPair = new ExternalizablePair(2);
 
 		FileInputStream inputStream = new FileInputStream(OUTPUT_FILE);
 		ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);

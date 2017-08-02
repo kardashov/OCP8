@@ -16,9 +16,6 @@ public class QuickTest {
      
      List<String> list = new ArrayList<>(Arrays.asList("AA","BB", null, "CC" ));
      
-     
-     
-     
      Collections.sort(list, nullsLast);
      System.out.println(list);
      

@@ -5,8 +5,6 @@ import java.lang.reflect.Method;
 
 public class MyDynamicProxyInvokationHandlerImpl implements InvocationHandler {
 	@Override
-	
-	
 	public Object invoke(Object proxy, Method method, Object[] arguments) throws Throwable {
 		System.out.println("using proxy " + proxy.getClass().getName());
 		System.out.println("method " + method.getName() + " from interface " + method.getDeclaringClass().getName());

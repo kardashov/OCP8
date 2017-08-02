@@ -5,7 +5,6 @@ import java.lang.reflect.Field;
 public class Fields {
 
 	public static void main(String[] args) throws IllegalArgumentException, IllegalAccessException, NoSuchFieldException, SecurityException {
-		// TODO Auto-generated method stub
 		String stringer = "this is a String called stringer";
 		Class<? extends String> stringGetClass = stringer.getClass();
 		Class<String> stringclass = String.class;

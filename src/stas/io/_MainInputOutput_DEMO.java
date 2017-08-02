@@ -2,7 +2,7 @@ package stas.io;
 
 import java.io.*;
 
-public class _MainInputOutput {
+public class _MainInputOutput_DEMO {
 	public static void main(String[] args) {
 
 		{

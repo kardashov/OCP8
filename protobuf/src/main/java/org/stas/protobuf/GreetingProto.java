@@ -3,8 +3,8 @@
 
 package org.stas.protobuf;
 
-public final class GreetingProtos {
-  private GreetingProtos() {}
+public final class GreetingProto {
+  private GreetingProto() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
@@ -27,6 +27,11 @@ public final class GreetingProtos {
      */
     com.google.protobuf.ByteString
         getGreetingBytes();
+
+    /**
+     * <code>bool healthy = 2;</code>
+     */
+    boolean getHealthy();
   }
   /**
    * Protobuf type {@code Greeting}
@@ -41,6 +46,7 @@ public final class GreetingProtos {
     }
     private Greeting() {
       greeting_ = "";
+      healthy_ = false;
     }
 
     @java.lang.Override
@@ -74,6 +80,11 @@ public final class GreetingProtos {
               greeting_ = s;
               break;
             }
+            case 16: {
+
+              healthy_ = input.readBool();
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -87,14 +98,14 @@ public final class GreetingProtos {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.stas.protobuf.GreetingProtos.internal_static_Greeting_descriptor;
+      return org.stas.protobuf.GreetingProto.internal_static_Greeting_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.stas.protobuf.GreetingProtos.internal_static_Greeting_fieldAccessorTable
+      return org.stas.protobuf.GreetingProto.internal_static_Greeting_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.stas.protobuf.GreetingProtos.Greeting.class, org.stas.protobuf.GreetingProtos.Greeting.Builder.class);
+              org.stas.protobuf.GreetingProto.Greeting.class, org.stas.protobuf.GreetingProto.Greeting.Builder.class);
     }
 
     public static final int GREETING_FIELD_NUMBER = 1;
@@ -131,6 +142,15 @@ public final class GreetingProtos {
       }
     }
 
+    public static final int HEALTHY_FIELD_NUMBER = 2;
+    private boolean healthy_;
+    /**
+     * <code>bool healthy = 2;</code>
+     */
+    public boolean getHealthy() {
+      return healthy_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -146,6 +166,9 @@ public final class GreetingProtos {
       if (!getGreetingBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, greeting_);
       }
+      if (healthy_ != false) {
+        output.writeBool(2, healthy_);
+      }
     }
 
     public int getSerializedSize() {
@@ -155,6 +178,10 @@ public final class GreetingProtos {
       size = 0;
       if (!getGreetingBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, greeting_);
+      }
+      if (healthy_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(2, healthy_);
       }
       memoizedSize = size;
       return size;
@@ -166,14 +193,16 @@ public final class GreetingProtos {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof org.stas.protobuf.GreetingProtos.Greeting)) {
+      if (!(obj instanceof org.stas.protobuf.GreetingProto.Greeting)) {
         return super.equals(obj);
       }
-      org.stas.protobuf.GreetingProtos.Greeting other = (org.stas.protobuf.GreetingProtos.Greeting) obj;
+      org.stas.protobuf.GreetingProto.Greeting other = (org.stas.protobuf.GreetingProto.Greeting) obj;
 
       boolean result = true;
       result = result && getGreeting()
           .equals(other.getGreeting());
+      result = result && (getHealthy()
+          == other.getHealthy());
       return result;
     }
 
@@ -186,63 +215,66 @@ public final class GreetingProtos {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + GREETING_FIELD_NUMBER;
       hash = (53 * hash) + getGreeting().hashCode();
+      hash = (37 * hash) + HEALTHY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getHealthy());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static org.stas.protobuf.GreetingProtos.Greeting parseFrom(
+    public static org.stas.protobuf.GreetingProto.Greeting parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.stas.protobuf.GreetingProtos.Greeting parseFrom(
+    public static org.stas.protobuf.GreetingProto.Greeting parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.stas.protobuf.GreetingProtos.Greeting parseFrom(byte[] data)
+    public static org.stas.protobuf.GreetingProto.Greeting parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.stas.protobuf.GreetingProtos.Greeting parseFrom(
+    public static org.stas.protobuf.GreetingProto.Greeting parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.stas.protobuf.GreetingProtos.Greeting parseFrom(java.io.InputStream input)
+    public static org.stas.protobuf.GreetingProto.Greeting parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static org.stas.protobuf.GreetingProtos.Greeting parseFrom(
+    public static org.stas.protobuf.GreetingProto.Greeting parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.stas.protobuf.GreetingProtos.Greeting parseDelimitedFrom(java.io.InputStream input)
+    public static org.stas.protobuf.GreetingProto.Greeting parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static org.stas.protobuf.GreetingProtos.Greeting parseDelimitedFrom(
+    public static org.stas.protobuf.GreetingProto.Greeting parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.stas.protobuf.GreetingProtos.Greeting parseFrom(
+    public static org.stas.protobuf.GreetingProto.Greeting parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static org.stas.protobuf.GreetingProtos.Greeting parseFrom(
+    public static org.stas.protobuf.GreetingProto.Greeting parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -254,7 +286,7 @@ public final class GreetingProtos {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(org.stas.protobuf.GreetingProtos.Greeting prototype) {
+    public static Builder newBuilder(org.stas.protobuf.GreetingProto.Greeting prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -274,20 +306,20 @@ public final class GreetingProtos {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:Greeting)
-        org.stas.protobuf.GreetingProtos.GreetingOrBuilder {
+        org.stas.protobuf.GreetingProto.GreetingOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.stas.protobuf.GreetingProtos.internal_static_Greeting_descriptor;
+        return org.stas.protobuf.GreetingProto.internal_static_Greeting_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.stas.protobuf.GreetingProtos.internal_static_Greeting_fieldAccessorTable
+        return org.stas.protobuf.GreetingProto.internal_static_Greeting_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.stas.protobuf.GreetingProtos.Greeting.class, org.stas.protobuf.GreetingProtos.Greeting.Builder.class);
+                org.stas.protobuf.GreetingProto.Greeting.class, org.stas.protobuf.GreetingProto.Greeting.Builder.class);
       }
 
-      // Construct using org.stas.protobuf.GreetingProtos.Greeting.newBuilder()
+      // Construct using org.stas.protobuf.GreetingProto.Greeting.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -306,29 +338,32 @@ public final class GreetingProtos {
         super.clear();
         greeting_ = "";
 
+        healthy_ = false;
+
         return this;
       }
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.stas.protobuf.GreetingProtos.internal_static_Greeting_descriptor;
+        return org.stas.protobuf.GreetingProto.internal_static_Greeting_descriptor;
       }
 
-      public org.stas.protobuf.GreetingProtos.Greeting getDefaultInstanceForType() {
-        return org.stas.protobuf.GreetingProtos.Greeting.getDefaultInstance();
+      public org.stas.protobuf.GreetingProto.Greeting getDefaultInstanceForType() {
+        return org.stas.protobuf.GreetingProto.Greeting.getDefaultInstance();
       }
 
-      public org.stas.protobuf.GreetingProtos.Greeting build() {
-        org.stas.protobuf.GreetingProtos.Greeting result = buildPartial();
+      public org.stas.protobuf.GreetingProto.Greeting build() {
+        org.stas.protobuf.GreetingProto.Greeting result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public org.stas.protobuf.GreetingProtos.Greeting buildPartial() {
-        org.stas.protobuf.GreetingProtos.Greeting result = new org.stas.protobuf.GreetingProtos.Greeting(this);
+      public org.stas.protobuf.GreetingProto.Greeting buildPartial() {
+        org.stas.protobuf.GreetingProto.Greeting result = new org.stas.protobuf.GreetingProto.Greeting(this);
         result.greeting_ = greeting_;
+        result.healthy_ = healthy_;
         onBuilt();
         return result;
       }
@@ -360,19 +395,22 @@ public final class GreetingProtos {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.stas.protobuf.GreetingProtos.Greeting) {
-          return mergeFrom((org.stas.protobuf.GreetingProtos.Greeting)other);
+        if (other instanceof org.stas.protobuf.GreetingProto.Greeting) {
+          return mergeFrom((org.stas.protobuf.GreetingProto.Greeting)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(org.stas.protobuf.GreetingProtos.Greeting other) {
-        if (other == org.stas.protobuf.GreetingProtos.Greeting.getDefaultInstance()) return this;
+      public Builder mergeFrom(org.stas.protobuf.GreetingProto.Greeting other) {
+        if (other == org.stas.protobuf.GreetingProto.Greeting.getDefaultInstance()) return this;
         if (!other.getGreeting().isEmpty()) {
           greeting_ = other.greeting_;
           onChanged();
+        }
+        if (other.getHealthy() != false) {
+          setHealthy(other.getHealthy());
         }
         onChanged();
         return this;
@@ -386,11 +424,11 @@ public final class GreetingProtos {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        org.stas.protobuf.GreetingProtos.Greeting parsedMessage = null;
+        org.stas.protobuf.GreetingProto.Greeting parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (org.stas.protobuf.GreetingProtos.Greeting) e.getUnfinishedMessage();
+          parsedMessage = (org.stas.protobuf.GreetingProto.Greeting) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -468,6 +506,32 @@ public final class GreetingProtos {
         onChanged();
         return this;
       }
+
+      private boolean healthy_ ;
+      /**
+       * <code>bool healthy = 2;</code>
+       */
+      public boolean getHealthy() {
+        return healthy_;
+      }
+      /**
+       * <code>bool healthy = 2;</code>
+       */
+      public Builder setHealthy(boolean value) {
+        
+        healthy_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool healthy = 2;</code>
+       */
+      public Builder clearHealthy() {
+        
+        healthy_ = false;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -483,12 +547,12 @@ public final class GreetingProtos {
     }
 
     // @@protoc_insertion_point(class_scope:Greeting)
-    private static final org.stas.protobuf.GreetingProtos.Greeting DEFAULT_INSTANCE;
+    private static final org.stas.protobuf.GreetingProto.Greeting DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.stas.protobuf.GreetingProtos.Greeting();
+      DEFAULT_INSTANCE = new org.stas.protobuf.GreetingProto.Greeting();
     }
 
-    public static org.stas.protobuf.GreetingProtos.Greeting getDefaultInstance() {
+    public static org.stas.protobuf.GreetingProto.Greeting getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -511,7 +575,7 @@ public final class GreetingProtos {
       return PARSER;
     }
 
-    public org.stas.protobuf.GreetingProtos.Greeting getDefaultInstanceForType() {
+    public org.stas.protobuf.GreetingProto.Greeting getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -531,9 +595,9 @@ public final class GreetingProtos {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\016greeting.proto\"\034\n\010Greeting\022\020\n\010greeting" +
-      "\030\001 \001(\tB#\n\021org.stas.protobufB\016GreetingPro" +
-      "tosb\006proto3"
+      "\n\016greeting.proto\"-\n\010Greeting\022\020\n\010greeting" +
+      "\030\001 \001(\t\022\017\n\007healthy\030\002 \001(\010B\"\n\021org.stas.prot" +
+      "obufB\rGreetingProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -552,7 +616,7 @@ public final class GreetingProtos {
     internal_static_Greeting_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Greeting_descriptor,
-        new java.lang.String[] { "Greeting", });
+        new java.lang.String[] { "Greeting", "Healthy", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

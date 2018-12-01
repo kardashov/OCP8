@@ -3,8 +3,9 @@ syntax = "proto3";
 option java_package = "org.stas.protobuf";
 // This is the name of the class.
 // If not provided, it will be created as <message name>OuterClass.
-option java_outer_classname = "GreetingProtos";
+option java_outer_classname = "GreetingProto";
 message Greeting {
     string greeting = 1;
+    bool healthy = 2;
 
 }

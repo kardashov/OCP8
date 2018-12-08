@@ -12,31 +12,18 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <protobuf.version>3.6.1</protobuf.version>
-        <grpc.version>1.13.1</grpc.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>com.google.protobuf</groupId>
             <artifactId>protobuf-java</artifactId>
-            <version>${protobuf.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.grpc</groupId>
-            <artifactId>grpc-protobuf</artifactId>
-            <version>${grpc.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.grpc</groupId>
-            <artifactId>grpc-stub</artifactId>
-            <version>${grpc.version}</version>
+            <version>3.6.1</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
     <build>
@@ -44,7 +31,7 @@
             <plugin>
                 <groupId>com.github.os72</groupId>
                 <artifactId>protoc-jar-maven-plugin</artifactId>
-                <version>3.6.0.1</version>
+                <version>3.2.0.1</version>
                 <executions>
                     <execution>
                         <phase>generate-sources</phase>
@@ -52,11 +39,7 @@
                             <goal>run</goal>
                         </goals>
                         <configuration>
-                            <protocArtifact>com.google.protobuf:protoc:${protobuf.version}</protocArtifact>
-                            <includeStdTypes>true</includeStdTypes>
-                            <addProtoSources>all</addProtoSources>
-
-                            <includeMavenTypes>direct</includeMavenTypes>
+                            <!-- <includeDirectories> <include>src/main/protobuf</include> </includeDirectories> -->
                             <inputDirectories>
                                 <include>src/main/proto</include>
                             </inputDirectories>
@@ -66,10 +49,6 @@
                                     <type>java</type>
                                     <outputDirectory>src/main/java</outputDirectory>
                                 </outputTarget>
-                                <!--<outputTarget>-->
-                                <!--<type>grpc-java</type>-->
-                                <!--<pluginArtifact>io.grpc:protoc-gen-grpc-java:${grpc.version}</pluginArtifact>-->
-                                <!--</outputTarget>-->
                             </outputTargets>
                         </configuration>
                     </execution>

@@ -14,6 +14,7 @@
     <modules>
         <module>ocpmain</module>
         <module>stas-grpc</module>
+        <module>gcp</module>
     </modules>
 
 
